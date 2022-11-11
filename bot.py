@@ -12,6 +12,10 @@ DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
 
 bot = discord.Client()
 
+# Add more complex messages along with a greeting, if someone has entered the server! 
+# Send pictures/videos??
+
+
 
 
 @bot.event
