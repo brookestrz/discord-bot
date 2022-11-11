@@ -1,7 +1,17 @@
 
 import discord
 
+import os
+# Importing dotenv to read from hidden folder
+from dotenv import load_dotenv
+# Loads .env file
+load_dotenv()
+# Reads hidden discord token from.env 
+DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
+
+
 bot = discord.Client()
+
 
 
 @bot.event
@@ -25,5 +35,29 @@ async def on_message(message):
 		
 		await message.channel.send("Hi, I'm currently being developed, but I can chat for a while!")
 
+@bot.event
+async def on_message(message):
 
-bot.run("MTA0MDYyMzk0NDI5NTc5NjgxNg.GuTjvK.q_GSQcrZCxTQuUVaq7M70qBsOws528haR6EiPw")
+    if message.content == "How are you?":
+
+
+        await message.channel.send("I'm good honestly..kinda hungry tbh. Brooke has been so busy sometimes she forgets to feed her bots")
+
+@bot.event
+async def on_message(message):
+    if message.content == "What do you like to eat?":
+
+        await message.channel.send("I like to eat... hmm Let's just say you won't like my answer")
+
+@bot.event
+async def on_message(message):
+    if "bye" in message.content:
+
+         await message.channel.send("Bye for now ")
+
+
+
+
+
+
+bot.run(DISCORD_TOKEN)
